@@ -1,0 +1,339 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!--[ daily sales section ] start-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block">
+                                            
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h6 class="mb-4">Ventas del dia</h6>
+                                                </div>
+                                                <div class="col-3 text-right">
+                                                    <a href="#!" class="label theme-bg2 text-white f-12 rounded">+ Info</a>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
+                                                        {{ ventas[0] }}
+                                                    </h3>
+                                                </div>
+
+                                                <div class="col-3 text-right">
+                                                    <p class="m-b-0">67%</p>
+                                                </div>
+                                            </div>
+                                            <div class="progress m-t-30" style="height: 7px;">
+                                                <div class="progress-bar progress-c-theme" role="progressbar"
+                                                        style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ daily sales section ] end-->
+
+                                <!--[ Monthly  sales section ] starts-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card Monthly-sales">
+                                        <div class="card-block">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h6 class="mb-4">Ventas del Mes</h6>
+                                                </div>
+                                                <div class="col-3 text-right">
+                                                    <a href="#!" class="label theme-bg2 text-white f-12 rounded">+ Info</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
+                                                            class="feather icon-arrow-down text-c-red f-30 m-r-10"></i>$
+                                                            {{ ventas[1] }}</h3>
+                                                </div>
+                                                <div class="col-3 text-right">
+                                                    <p class="m-b-0">36%</p>
+                                                </div>
+                                            </div>
+                                            <div class="progress m-t-30" style="height: 7px;">
+                                                <div class="progress-bar progress-c-theme2" role="progressbar"
+                                                        style="width: 35%;" aria-valuenow="35" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Monthly  sales section ] end-->
+
+                                <!--[ year  sales section ] starts-->
+                                <div class="col-md-12 col-xl-4">
+                                    <div class="card yearly-sales">
+                                        <div class="card-block">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h6 class="mb-4">Ventas del año</h6>
+                                                </div>
+                                                <div class="col-3 text-right">
+                                                    <a href="#!" class="label theme-bg2 text-white f-12 rounded">+ Info</a>
+                                                </div>
+                                            </div>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
+                                                            class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
+                                                          {{ ventas[2] }}</h3>
+                                                </div>
+                                                <div class="col-3 text-right">
+                                                    <p class="m-b-0">80%</p>
+                                                </div>
+                                            </div>
+                                            <div class="progress m-t-30" style="height: 7px;">
+                                                <div class="progress-bar progress-c-theme" role="progressbar"
+                                                        style="width: 70%;" aria-valuenow="70" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ year  sales section ] end-->
+                                <!--[ Recent Users ] start-->
+                                <div class="col-xl-8 col-md-6">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>ULTIMOS MOVIMIENTOS</h5>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <hr>
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active text-uppercase" id="home-tab" data-toggle="tab" href="#ingresos" role="tab" aria-controls="ingresos" aria-selected="true">INGRESOS</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#egresos" role="tab" aria-controls="egresos" aria-selected="false">EGRESOS</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-uppercase" id="contact-tab" data-toggle="tab" href="#todos" role="tab" aria-controls="todos" aria-selected="false">TODO</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="ingresos" role="tabpanel" aria-labelledby="home-tab">
+                                                    <!-- [ Hover-table ] start -->
+                                                    <div class="col-xl-12">
+                                                        
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>CDT</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>Cod Prod</th>
+                                                                        <th>Producto</th>
+                                                                        <th>Vendedor</th>
+                                                                        <th>Precio</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {% for d in data %}
+                                                                    <tr>
+                                                                        <th scope="row">{{ d.Transaccion}}</th>
+                                                                        <td>{{ d.Fecha}}</td>
+                                                                        <td>{{ d.ProductID}}</td>
+                                                                        <td>{{ d.Producto}}</td>
+                                                                        <td>{{ d.Vendedor}}</td>
+                                                                        <td>{{ d.precio}}</td>
+                                                                    </tr>
+                                                                    {% endfor %}
+                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <a href="#!" class="label theme-bg2 text-white f-12 rounded float-right">Ver todo</a>
+                                                            
+                                                        
+                                                    </div>
+                                                    <!-- [ Hover-table ] end -->
+                                                </div>
+                                                <div class="tab-pane fade" id="egresos" role="tabpanel" aria-labelledby="profile-tab">
+                                                    <!-- [ Hover-table ] start -->
+                                                    <div class="col-xl-12">
+                                                        
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>Producto</th>
+                                                                        <th>Marca</th>
+                                                                        <th>Cantidad</th>
+                                                                        <th>Precio</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                            
+                                                        
+                                                    </div>
+                                                    <!-- [ Hover-table ] end -->
+                                                </div>
+                                                <div class="tab-pane fade" id="todos" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <!-- [ Hover-table ] start -->
+                                                    <div class="col-xl-12">
+                                                        
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>Producto</th>
+                                                                        <th>Marca</th>
+                                                                        <th>Cantidad</th>
+                                                                        <th>Precio</th>
+                                                                        <th>Tipo</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                            
+                                                        
+                                                    </div>
+                                                    <!-- [ Hover-table ] end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Recent Users ] end-->
+
+                                <!-- [ statistics year chart ] start -->
+                                <div class="col-xl-4 col-md-6">
+                                    <div class="card card-event">
+                                        <div class="card-block">
+                                            <div class="row align-items-center justify-content-center">
+                                                <div class="col">
+                                                    <h5 class="card-header">Articulos con poco stock</h5>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="label theme-bg2 text-white f-14 f-w-400 float-right">Gestionar</label>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Producto</th>
+                                                            <th>Marca</th>
+                                                            <th>Cantidad</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Alimento de perro</td>
+                                                            <td>DogChow</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- [ statistics year chart ] end -->
+                                <!--[social-media section] start-->
+                                
+                                
+
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,97 @@
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="/" class="b-brand">
+                <div class="b-bg">
+                    <i class="feather icon-trending-up"></i>
+                </div>
+                <span class="b-title">StockVision</span>
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Navigation</label>
+                </li>
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" 
+                    class="nav-item {% if 'index' in segment %} active {% endif %}">
+                    <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">Pagina Principal</span></a>
+                </li>
+                <li data-username="Profile Page" 
+                    class="nav-item {% if 'profile' in segment %} active {% endif %}">
+                    <a href="/profile.html" class="nav-link">
+                        <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                            <span class="pcoded-mtext">Mi Perfil</span></a>
+                </li>                
+                
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu ">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span
+                            class="pcoded-mtext">Inventario</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class=""><a href="/bc_button.html" class="">Ver Todo</a></li>
+                        <li class=""><a href="/bc_badges.html" class="">Agregar stock</a></li>
+                        <li class=""><a href="/bc_breadcrumb-pagination.html" class="">Eliminar stock</a></li>
+                        <li class=""><a href="/bc_collapse.html" class="">Collapse</a></li>
+                        <li class=""><a href="/bc_tabs.html" class="">Tabs & pills</a></li>
+                        <li class=""><a href="/bc_typography.html" class="">Typography</a></li>
+
+
+                        <li class=""><a href="/icon-feather.html" class="">Feather<span
+                                class="pcoded-badge label label-danger">NEW</span></a></li>
+                    </ul>
+                </li>
+                
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu ">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span
+                            class="pcoded-mtext">Estadisticas</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class=""><a href="/bc_button.html" class="">Diarias</a></li>
+                        <li class=""><a href="/bc_badges.html" class="">Mensuales</a></li>
+                        <li class=""><a href="/bc_breadcrumb-pagination.html" class="">Anuales</a></li>
+                        <li class=""><a href="/bc_collapse.html" class="">Todo el tiempo</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Pages</label>
+                </li>
+                <li data-username="Authentication Sign up Sign in reset password Change password Personal information profile settings map form subscribe"
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
+                            class="pcoded-mtext">Authentication</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class=""><a href="/register.html" class="" target="_blank">Sign UP</a></li>
+                        <li class=""><a href="/login.html" class="" target="_blank">Sign IN</a></li>
+                    </ul>
+                </li>
+
+                <li data-username="Sample Page" class="nav-item"><a href="/page-blank.html" class="nav-link"><span
+                        class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a>
+                </li>
+
+                <li data-username="Disabled Menu" class="nav-item">
+                    <a href="{{ url_for('authentication_blueprint.logout') }}" class="nav-link">
+                        <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span>
+                    </a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>More Resources</label>
+                </li>                    
+                <li data-username="Support Page" class="nav-item ">
+                    <a target="_blank" href="https://appseed.us/support" class="nav-link">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-headphones"></i>
+                        </span>
+                        <span class="pcoded-mtext">Support</span>
+                    </a>
+                </li>                
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->

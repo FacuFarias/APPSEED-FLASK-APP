@@ -1,0 +1,187 @@
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+    <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+        <a href="/" class="b-brand">
+            <div class="b-bg">
+                <i class="feather icon-trending-up"></i>
+            </div>
+            <span class="b-title">StockVision</span>
+        </a>
+    </div>
+    
+    <a class="mobile-menu" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li><a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()"><i
+                    class="feather icon-maximize"></i></a></li>
+
+            <li class="nav-item">
+                <div class="main-search">
+                    <div class="input-group">
+                        <input type="text" id="m-search" class="form-control" placeholder="Search . . .">
+                        <a href="javascript:" class="input-group-append search-close">
+                            <i class="feather icon-x input-group-text"></i>
+                        </a>
+                        <span class="input-group-append search-btn btn btn-primary">
+                                <i class="feather icon-search input-group-text"></i>
+                            </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        
+        <ul class="navbar-nav ml-auto">
+            <li>
+                <label>
+                    <i class="icon feather icon-sun" id="theme-indicator"></i>
+                    <input type="checkbox" id="theme-switch" class="d-none">
+                </label>
+            </li>
+
+
+            <!-- aca pongo los botones -->
+            
+            <li>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" id="asd" data-bs-target="#modal_compra">NUEVA COMPRA</button>
+                <!-- Modal -->
+                <div class="modal fade custom-modal" id="modal_compra" tabindex="-1" data-bs-keyboard="true" aria-labelledby="exampleModalLabel" aria-hidden="false" data-bs-backdrop="false" >
+                    <div class="modal-dialog" z-index="-2">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">NUEVA COMPRA</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div class="main-search">
+                                    <div class="input-group">
+                                        <input type="text" id="m-search" class="form-control" placeholder="Inserta palabra clave. . . ">
+                                        <a href="javascript:" class="input-group-append search-close">
+                                            <i class="feather icon-x input-group-text"></i>
+                                        </a>
+                                        <span class="input-group-append search-btn btn btn-primary">
+                                                <i class="feather icon-search input-group-text"></i>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div><p>Filtros</p></div>
+                                    <form method="POST" action="/edit/">
+                                        <label for="color">Color:</label>
+                                            <select name="color" id="color" class="form-select">
+                                            {% for color in colores %}
+                                            <option value={{color}}>{{ color}}</option>
+                                            {% endfor %}                                            
+                                            </select>
+
+                                            <label for="genero">Género:</label>
+                                            <select name="genero" id="genero">
+                                                {% for genero in generos %}
+                                                <option value={{genero}}>{{ genero}}</option>
+                                                {% endfor %}
+                                            </select>
+
+                                            <label for="marca">Marca:</label>
+                                            <select name="marca" id="marca">
+                                                {% for marca in marcas %}
+                                                <option value={{marca}}>{{ marca}}</option>
+                                                {% endfor %}
+                                            
+                                            </select>
+                                            
+
+                                            
+                                            <p>
+                                            <label for="cantidad">Cantidad:</label></p>
+                                            <div class="input-group">
+                                            
+                                                <button type="button" class="btn btn-outline-danger" data-field="cantidad">-</button>
+                                                
+                                                <input type="text" name="cantidad" class="form-control input-number" value="1" min="1">
+                                            
+                                                <button type="button" class="btn btn-outline-success" data-type="plus" data-field="cantidad">+</button>
+                                                
+                                            </div>
+                                            
+
+                                    </form>
+                                </div>
+                                <div class="table-container">
+                                    <table id="my-table" class="table-responsive">
+                                      <thead style="position: sticky; top: 0; background-color: #08133a;">
+                                        <tr>
+                                          <th>Producto</th>
+                                          <th>Marca</th>                                                
+                                          <th>Género</th>
+                                          <th>Color</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {% for p in productos %}
+                                        <tr style="height: 10px !important;" onclick="selectRow(this)">
+                                          <th style="font-size: 12px;">{{ p.ProductName}}</th>
+                                          <td style="font-size: 12px;">{{ p.Marca}}</td>
+                                          <td style="font-size: 12px;">{{ p.Genero}}</td>
+                                          <td style="font-size: 12px;">{{ p.ColorName}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                      </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+                
+
+            <li>
+                <button type="button" class="btn btn-danger" data-toggle="tooltip">NUEVO GASTO</button>
+            </li>
+
+            <!--                       -->
+            
+            
+            
+
+            <li>
+                <div class="dropdown drp-user">
+                    <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon feather icon-settings"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-notification">
+                        <div class="pro-head">
+                            <img src="{{ config.ASSETS_ROOT }}/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                            <span>
+                                {{ current_user.username }}    
+                            </span>
+                            <a href="/auth-signin.html" class="dud-logout" title="Logout">
+                                <i class="feather icon-log-out"></i>
+                            </a>
+                        </div>
+                        <ul class="pro-body">
+                            <li><a href="/profile.html" class="dropdown-item"><i class="feather icon-user"></i>
+                                Mi perfil</a></li>
+                            <li><a href="{{ url_for('authentication_blueprint.logout') }}" class="dropdown-item">
+                                <i class="feather icon-lock"></i> Desconectar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</header>
+<!-- [ Header ] end -->
